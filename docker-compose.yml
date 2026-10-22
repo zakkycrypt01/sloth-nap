@@ -1,0 +1,17 @@
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_PASSWORD: sloth
+      POSTGRES_DB: slothnap
+    ports:
+      - "5432:5432"
+  mongo:
+    image: mongo:7
+    ports:
+      - "27017:27017"
+  temporal:
+    image: temporalio/auto-setup:1.25.2
+    profiles: ["temporal"]
+    ports:
+      - "7233:7233"

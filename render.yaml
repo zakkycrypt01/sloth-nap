@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: sloth-nap
+    runtime: node
+    plan: free
+    buildCommand: npm ci
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: GEMMA_MODEL
+        value: gemma2:2b
+      - key: OLLAMA_BASE_URL
+        value: off

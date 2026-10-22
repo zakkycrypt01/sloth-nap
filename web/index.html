@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sloth Nap</title>
+    <style>
+      :root { color-scheme: light; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: #f3efe6;
+        color: #243027;
+        font-family: Georgia, "Iowan Old Style", serif;
+      }
+      main { max-width: 38rem; margin: 0 auto; padding: 4rem 1.5rem; }
+      p { font-size: 1.35rem; line-height: 1.45; }
+      .meta { font-family: ui-sans-serif, system-ui, sans-serif; font-size: 0.9rem; color: #5c675f; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p class="meta">Morning brief</p>
+      <p id="line1">Still napping.</p>
+      <p id="line2"></p>
+      <p class="meta" id="saved"></p>
+    </main>
+    <script>
+      fetch("/api/brief")
+        .then((response) => response.json())
+        .then((brief) => {
+          if (!brief.lines) return;
+          document.getElementById("line1").textContent = brief.lines[0];
+          document.getElementById("line2").textContent = brief.lines[1];
+          document.getElementById("saved").textContent = "About " + brief.minutesSaved + " minutes you do not have to spend.";
+        })
+        .catch(() => {});
+    </script>
+  </body>
+</html>

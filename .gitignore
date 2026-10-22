@@ -1,0 +1,11 @@
+node_modules/
+dist/
+out/
+.env
+*.db
+*.mp3
+__pycache__/
+.pytest_cache/
+python/out/
+*.tsbuildinfo
+.DS_Store

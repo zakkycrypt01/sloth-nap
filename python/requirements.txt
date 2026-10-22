@@ -1,0 +1,6 @@
+# Optional. TabPFN-3.5 is free after the non-commercial license at
+# https://platform.priorlabs.ai and may not have a wheel for every Python.
+# tabpfn
+
+# Optional. Thinking Machines' training client.
+# tinker

@@ -1,0 +1,40 @@
+{
+  "name": "sloth-nap",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "An overnight chore agent. Gemma and an open tool loop do the dreaded bits while you nap.",
+  "scripts": {
+    "nap": "node --env-file-if-exists=.env --import tsx src/cli.ts",
+    "start": "node --env-file-if-exists=.env --import tsx src/server.ts",
+    "test": "node --import tsx --test test/**/*.test.ts",
+    "worker": "node --env-file-if-exists=.env --import tsx src/temporal/worker.ts",
+    "forecast": "python3 python/tabpfn_forecast.py inbox/chores.csv",
+    "tinker": "python3 python/tinker_eval.py",
+    "build": "tsc -p tsconfig.json"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "@mastra/core": "^1.79.0",
+    "@mastra/libsql": "^1.27.0",
+    "@mastra/memory": "^1.39.0",
+    "@sentry/node": "^11.8.0",
+    "@temporalio/activity": "^1.24.0",
+    "@temporalio/client": "^1.24.0",
+    "@temporalio/worker": "^1.24.0",
+    "@temporalio/workflow": "^1.24.0",
+    "jose": "^6.2.13",
+    "mongodb": "^7.7.0",
+    "pg": "^8.23.1",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@temporalio/testing": "^1.24.0",
+    "@types/node": "^26.6.5",
+    "@types/pg": "^8.23.1",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}

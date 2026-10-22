@@ -1,0 +1,9 @@
+[
+  {
+    "match": "small claims",
+    "title": "File a small claim online",
+    "url": "fixture://small-claims",
+    "snippet": "Filing online is $30. Showing up in person is $45 and a morning.",
+    "pageText": "The court clerk's page says the online small-claims fee is $30. In-person filing is $45 plus the time you spend in line. You can do it from a chair."
+  }
+]
